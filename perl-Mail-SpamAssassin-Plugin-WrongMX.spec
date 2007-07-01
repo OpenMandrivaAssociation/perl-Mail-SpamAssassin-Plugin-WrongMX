@@ -1,13 +1,12 @@
 Summary:	The WrongMX Plugin for SpamAssassin
 Name:		perl-Mail-SpamAssassin-Plugin-WrongMX
 Version:	0
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Apache License
 Group:		Development/Perl
 URL:		http://people.apache.org/~dos/sa-plugins/3.0/
-Source0:	http://people.apache.org/~dos/sa-plugins/3.0/wrongmx.cf.bz2
-Source1:	http://people.apache.org/~dos/sa-plugins/3.0/wrongmx.pm.bz2
-Patch0:		WrongMX-fix-module-path.patch
+Source0:	http://people.apache.org/~dos/sa-plugins/3.0/wrongmx.cf
+Source1:	http://people.apache.org/~dos/sa-plugins/3.0/wrongmx.pm
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):  spamassassin-spamd >= 3.1.1
@@ -33,10 +32,12 @@ preference MX was likely available.
 
 %setup -q -T -c -n %{name}-%{version}
 
-bzcat %{SOURCE0} > WrongMX.cf
-bzcat %{SOURCE1} > WrongMX.pm
+cp %{SOURCE0} WrongMX.cf
+cp %{SOURCE1} WrongMX.pm
 
-%patch0
+# fix package name and path
+perl -pi -e "s|WrongMX wrongmx\.pm|Mail::SpamAssassin::Plugin::WrongMX %{perl_vendorlib}/Mail/SpamAssassin/Plugin/WrongMX.pm|g" WrongMX.cf
+perl -pi -e "s|^package WrongMX|package Mail::SpamAssassin::Plugin::WrongMX|g" WrongMX.pm
 
 %build
 
@@ -68,5 +69,3 @@ fi
 %defattr(644,root,root,755)
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/mail/spamassassin/WrongMX.cf
 %{perl_vendorlib}/Mail/SpamAssassin/Plugin/WrongMX.pm
-
-
