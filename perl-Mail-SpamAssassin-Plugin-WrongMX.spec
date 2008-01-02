@@ -12,6 +12,7 @@ Requires(postun): rpm-helper
 Requires(pre):  spamassassin-spamd >= 3.1.1
 Requires:	spamassassin-spamd >= 3.1.1
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 WrongMX determines if an email was sent to a lower preference MX when a higher
