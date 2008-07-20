@@ -1,7 +1,7 @@
 Summary:	The WrongMX Plugin for SpamAssassin
 Name:		perl-Mail-SpamAssassin-Plugin-WrongMX
 Version:	0
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	Apache License
 Group:		Development/Perl
 URL:		http://people.apache.org/~dos/sa-plugins/3.0/
@@ -12,7 +12,7 @@ Requires(postun): rpm-helper
 Requires(pre):  spamassassin-spamd >= 3.1.1
 Requires:	spamassassin-spamd >= 3.1.1
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 WrongMX determines if an email was sent to a lower preference MX when a higher
