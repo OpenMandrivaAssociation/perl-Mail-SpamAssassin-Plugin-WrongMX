@@ -69,3 +69,30 @@ fi
 %defattr(644,root,root,755)
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/mail/spamassassin/WrongMX.cf
 %{perl_vendorlib}/Mail/SpamAssassin/Plugin/WrongMX.pm
+
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0-5mdv2010.0
++ Revision: 430497
+- rebuild
+
+* Sun Jul 20 2008 Oden Eriksson <oeriksson@mandriva.com> 0-4mdv2009.0
++ Revision: 239112
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Sun Jul 01 2007 Oden Eriksson <oeriksson@mandriva.com> 0-3mdv2008.0
++ Revision: 46379
+- misc fixes
+
+
+* Sat Nov 25 2006 Emmanuel Andry <eandry@mandriva.org> 0-2mdv2007.0
++ Revision: 87294
+- patch to fix perl module path
+- Import perl-Mail-SpamAssassin-Plugin-WrongMX
+

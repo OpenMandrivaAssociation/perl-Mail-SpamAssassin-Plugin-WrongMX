@@ -1,0 +1,7 @@
+loadplugin      WrongMX wrongmx.pm
+
+header          WRONGMX eval:wrongmx()
+describe        WRONGMX Sent to lower pref MX when higher pref MX was up.
+tflags          WRONGMX net
+score           WRONGMX 1.0
+
