@@ -1,7 +1,7 @@
 Summary:	The WrongMX Plugin for SpamAssassin
 Name:		perl-Mail-SpamAssassin-Plugin-WrongMX
 Version:	0
-Release:	%mkrel 5
+Release:	6
 License:	Apache License
 Group:		Development/Perl
 URL:		http://people.apache.org/~dos/sa-plugins/3.0/
