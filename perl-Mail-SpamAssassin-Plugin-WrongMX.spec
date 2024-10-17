@@ -4,7 +4,7 @@ Version:	0
 Release:	7
 License:	Apache License
 Group:		Development/Perl
-URL:		http://people.apache.org/~dos/sa-plugins/3.0/
+URL:		https://people.apache.org/~dos/sa-plugins/3.0/
 Source0:	http://people.apache.org/~dos/sa-plugins/3.0/wrongmx.cf
 Source1:	http://people.apache.org/~dos/sa-plugins/3.0/wrongmx.pm
 Requires(pre): rpm-helper
